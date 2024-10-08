@@ -14,7 +14,7 @@
     "commands": [
       {
         "command": "extension.base64ToFile",
-        "title": "Convertir Base64 a Archivo"
+        "title": "%base64ToFileCommand.title%"
       }
     ]
   },
