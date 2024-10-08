@@ -1,71 +1,63 @@
-# base64-converter README
+# Base64 to File Converter
 
-This is the README for your extension "base64-converter". After writing up a brief description, we recommend including the following sections.
+**Base64 to File Converter** is a Visual Studio Code extension that allows you to quickly and securely convert Base64 strings into files. This tool is designed with performance and security in mind, providing an efficient way to handle Base64 data conversion directly from your editor.
+
+## Donations
+
+If you find this extension helpful, consider supporting the developer by buying them a coffee:
+
+<a href="https://www.buymeacoffee.com/xubylelec"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=xubylelec&button_colour=BD5FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Fast and Secure Conversion**:
+  - Convert Base64 strings to files with just a few clicks.
+  - No external dependencies or online services are required, ensuring your data stays secure.
+  
+- **Supported File Extensions**:
+  - Convert Base64 strings into popular file formats such as `pdf`, `txt`, `png`, `jpg`, `docx`, and more.
+  - Option to specify custom file extensions for less common formats.
 
-For example if there is an image subfolder under your extension project workspace:
+- **Intuitive Interface**:
+  - The extension prompts you for the Base64 string and file type, making the conversion process straightforward and user-friendly.
 
-\!\[feature X\]\(images/feature-x.png\)
+## Example
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Here’s an example of the extension in action:
 
-## Requirements
+![Base64 to File Example](https://i.imgur.com/your-image-link.png)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Installation
 
-## Extension Settings
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or press `Ctrl+Shift+X`.
+3. Search for `Base64 to File Converter`.
+4. Click **Install**.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Alternatively, you can install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Xubylele.base64-to-file-converter).
 
-For example:
+## Usage
 
-This extension contributes the following settings:
+1. Open Visual Studio Code.
+2. Press `Ctrl+Shift+P` to open the command palette.
+3. Type `Base64 to File Converter` and select the command.
+4. Enter the Base64 string you want to convert.
+5. Choose the file format you want to convert the Base64 string into.
+6. The file will be saved in the specified location.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Supported File Formats
 
-## Known Issues
+- **Common Formats**: `pdf`, `txt`, `png`, `jpg`, `docx`.
+- **Custom Extensions**: You can define any custom file extension by selecting the "Other" option.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## Customization
 
-## Release Notes
+You can customize the behavior of the extension through Visual Studio Code's settings. For instance, you can change default file paths or file types in the future releases.
 
-Users appreciate release notes as you update your extension.
+## Contributing
 
-### 1.0.0
+If you want to contribute to this project, feel free to submit issues or pull requests in the [GitHub repository](https://github.com/xubylele/base64-converters).
 
-Initial release of ...
+## License
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
