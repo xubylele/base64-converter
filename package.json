@@ -34,6 +34,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
+    "@types/i18n": "^0.13.12",
     "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
     "@types/vscode": "^1.93.0",
@@ -47,6 +48,7 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
+    "i18n": "^0.15.1",
     "vscode": "^1.1.37"
   }
 }
