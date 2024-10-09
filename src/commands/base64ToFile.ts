@@ -2,10 +2,6 @@ import * as vscode from 'vscode';
 import i18n from '../I18n';
 
 export async function base64ToFileCommand() {
-  const testMessage = i18n.__('base64.putBase64');
-  console.log('Prueba de i18n: ', testMessage);
-  vscode.window.showInformationMessage(`Traducción de prueba: ${testMessage}`);
-
   const base64Input = await vscode.window.showInputBox({
     prompt: i18n.__('base64.putBase64'),
     placeHolder: 'SGVsbG8gd29ybGQh==',
