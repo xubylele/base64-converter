@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import * as vscode from 'vscode';
 import i18n from '../I18n';
 
@@ -43,8 +44,13 @@ export async function base64ToFileCommand() {
 
   try {
     const fileContent = Buffer.from(base64Input, 'base64');
-    await vscode.workspace.fs.writeFile(saveUri, fileContent);
-    vscode.window.showInformationMessage(i18n.__('base64.saveFileAs', { fileName: saveUri.fsPath }));
+    fs.writeFile(saveUri.fsPath, fileContent, (err) => {
+      if (err) {
+        vscode.window.showErrorMessage(i18n.__('base64.errorSavingFile'));
+      } else {
+        vscode.window.showInformationMessage(i18n.__('base64.saveFileAs', { fileName: saveUri.fsPath }));
+      }
+    });
   } catch (error) {
     vscode.window.showErrorMessage(i18n.__('base64.errorSavingFile'));
   }

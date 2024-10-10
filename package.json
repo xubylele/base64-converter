@@ -2,7 +2,7 @@
   "name": "base64-converter",
   "displayName": "Base64 converter",
   "description": "A base64 converter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.93.0"
   },
@@ -10,6 +10,11 @@
     "Other"
   ],
   "main": "./dist/extension.js",
+  "activationEvents": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xubylele/base64-converter.git"
+  },
   "contributes": {
     "commands": [
       {
@@ -37,18 +42,15 @@
     "@types/i18n": "^0.13.12",
     "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
-    "@types/vscode": "^1.93.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
     "esbuild": "^0.24.0",
     "eslint": "^9.11.1",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.6.2"
-  },
-  "dependencies": {
     "i18n": "^0.15.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.6.2",
     "vscode": "^1.1.37"
   }
 }
