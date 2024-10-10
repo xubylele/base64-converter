@@ -11,3 +11,9 @@ All notable changes to the "base64-converter" extension will be documented in th
 ## [1.0.1] - 2024-10-09
 
 - Updated README.md with detailed instructions on installation and usage.
+
+## [1.1.0] - 2024-10-10
+
+- Added registration for a new `WebviewViewProvider` in the side panel.
+  - This prepares the extension for a future UI that will allow interaction through a graphical interface.
+  - No visual interface added yet, but the view container is now in place.

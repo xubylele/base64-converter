@@ -2,7 +2,7 @@
   "name": "base64-converter",
   "displayName": "Base64 converter",
   "description": "A base64 converter",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "publisher": "Xubylele",
   "icon": "assets/logo.png",
   "engines": {
@@ -23,7 +23,24 @@
         "command": "extension.base64ToFile",
         "title": "%base64ToFileCommand.title%"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "base64Converter",
+          "title": "Base64 Converter",
+          "icon": "assets/logo.png"
+        }
+      ]
+    },
+    "views": {
+      "base64Converter": [
+        {
+          "id": "base64ConverterView",
+          "name": "Converter UI"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
@@ -44,6 +61,7 @@
     "@types/i18n": "^0.13.12",
     "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
+    "@types/vscode": "1.82.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vscode/test-cli": "^0.0.10",
