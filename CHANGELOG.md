@@ -7,3 +7,7 @@ All notable changes to the "base64-converter" extension will be documented in th
 - Initial release:
   - Added functionality to convert a Base64 string to a file and save it to the filesystem.
   - Users can specify the file extension or input a custom extension.
+
+## [1.0.1] - 2024-10-09
+
+- Updated README.md with detailed instructions on installation and usage.

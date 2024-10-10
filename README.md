@@ -44,7 +44,7 @@ Here’s an example of the extension in action step-by-step with images:
 3. Search for `Base64 converter`.
 4. Click **Install**.
 
-Alternatively, you can install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Xubylele.base64-to-file-converter).
+Alternatively, you can install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Xubylele.base64-converter).
 
 ## Usage
 
