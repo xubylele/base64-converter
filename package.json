@@ -3,6 +3,8 @@
   "displayName": "Base64 converter",
   "description": "A base64 converter",
   "version": "1.0.0",
+  "publisher": "Xubylele",
+  "icon": "assets/logo.png",
   "engines": {
     "vscode": "^1.93.0"
   },
