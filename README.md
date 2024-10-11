@@ -18,24 +18,14 @@ If you find this extension helpful, consider supporting the developer by buying 
   - Convert Base64 strings into popular file formats such as `pdf`, `txt`, `png`, `jpg`, `docx`, and more.
   - Option to specify custom file extensions for less common formats.
 
-- **Intuitive Interface**:
-  - The extension prompts you for the Base64 string and file type, making the conversion process straightforward and user-friendly.
+- **New Graphical Interface**:
+  - We have introduced a new user-friendly interface that allows you to easily convert Base64 strings into files without using the command palette.
+  - The interface includes real-time feedback for successful conversions and automatic clearing of the input field after each operation.
 
 ## Example
 
-Here’s an example of the extension in action step-by-step with images:
-
-1. Open your command palette by pressing `Ctrl+Shift+P` or `Cmd+Shift+P`.
-2. Type `Base64 converter` and select the command.
-![Step 1 and 2](https://i.imgur.com/gXdOgQS.png)
-3. Enter the Base64 string you want to convert.
-![Step 3](https://i.imgur.com/MRnfTCX.png)
-4. Choose the file format you want to convert the Base64 string into.
-![Step 4](https://i.imgur.com/TgZbg09.png)
-5. The file will be saved in the specified location.
-![Step 5](https://i.imgur.com/Jr1ogx1.png)
-6. The file is saved successfully.
-![Step 6](https://i.imgur.com/ClOALnB.png)
+Here's a quick example of how you can use the Base64 converter extension to convert a Base64 string into a PNG file:
+![Base64 converter example](https://i.imgur.com/tEmCxmv.png)
 
 ## Installation
 
@@ -48,12 +38,22 @@ Alternatively, you can install the extension from the [Visual Studio Code Market
 
 ## Usage
 
+### Option 1: Using the Command Palette
+
 1. Open Visual Studio Code.
 2. Press `Ctrl+Shift+P` to open the command palette.
 3. Type `Base64 converter` and select the command.
 4. Enter the Base64 string you want to convert.
 5. Choose the file format you want to convert the Base64 string into.
 6. The file will be saved in the specified location.
+
+### Option 2: Using the New Graphical Interface
+
+1. Open Visual Studio Code.
+2. Run the command `Open Base64 Converter View` from the command palette or access it from the side panel.
+3. Enter the Base64 string in the input field.
+4. Click **Convert to File**.
+5. After successful conversion, the file will be saved, and the input field will be cleared automatically.
 
 ## Supported File Formats
 
@@ -62,7 +62,7 @@ Alternatively, you can install the extension from the [Visual Studio Code Market
 
 ## Customization
 
-You can customize the behavior of the extension through Visual Studio Code's settings. For instance, you can change default file paths or file types in the future releases.
+You can customize the behavior of the extension through Visual Studio Code's settings. For instance, you can change default file paths or file types in future releases.
 
 ## Contributing
 
