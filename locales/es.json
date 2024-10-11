@@ -15,5 +15,13 @@
     "notOutputUbication": "No has introducido la ubicación de salida",
     "saveFileAs": "Guardar archivo como {{fileName}}",
     "errorSavingFile": "Error al guardar el archivo, por favor, inténtalo de nuevo"
+  },
+  "base64Converter": {
+    "title": "Convertidor Base64",
+    "error": "Error",
+    "label": "Convertidor Base64",
+    "button": "Convertir",
+    "alert": "Alerta",
+    "successMessage": "Archivo guardado correctamente"
   }
 }

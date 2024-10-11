@@ -1,3 +1,4 @@
 {
-  "base64ToFileCommand.title": "Convert base64 to file"
+  "base64ToFileCommand.title": "Convert base64 to file",
+  "openBase64ConverterViewCommand.title": "Open base64 converter"
 }

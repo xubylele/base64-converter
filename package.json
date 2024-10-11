@@ -2,7 +2,7 @@
   "name": "base64-converter",
   "displayName": "Base64 converter",
   "description": "A base64 converter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "Xubylele",
   "icon": "assets/logo.png",
   "engines": {
@@ -22,25 +22,12 @@
       {
         "command": "extension.base64ToFile",
         "title": "%base64ToFileCommand.title%"
+      },
+      {
+        "command": "extension.openBase64ConverterView",
+        "title": "%openBase64ConverterViewCommand.title%"
       }
-    ],
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "base64Converter",
-          "title": "Base64 Converter",
-          "icon": "assets/logo.png"
-        }
-      ]
-    },
-    "views": {
-      "base64Converter": [
-        {
-          "id": "base64ConverterView",
-          "name": "Converter UI"
-        }
-      ]
-    }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
