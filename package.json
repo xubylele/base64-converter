@@ -24,8 +24,16 @@
         "title": "%base64ToFileCommand.title%"
       },
       {
+        "command": "extension.fileToBase64",
+        "title": "%fileToBase64Command.title%"
+      },
+      {
         "command": "extension.openBase64ConverterView",
         "title": "%openBase64ConverterViewCommand.title%"
+      },
+      {
+        "command": "extension.openFileConverterView",
+        "title": "%openFileConverterViewCommand.title%"
       }
     ]
   },

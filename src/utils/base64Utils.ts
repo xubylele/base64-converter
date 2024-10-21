@@ -44,4 +44,19 @@ export async function convertBase64ToFile(base64Input: string) {
   } catch (error) {
     vscode.window.showErrorMessage(i18n.__('base64.errorSavingFile'));
   }
-}
+};
+
+export async function convertFileToBase64(fileUri: vscode.Uri) {
+  try {
+    vscode.window.showInformationMessage('Converting file to base64...', { modal: true });
+    const fileContent = fs.readFileSync(fileUri.fsPath);
+    const base64Content = Buffer.from(fileContent).toString('base64');
+    const base64Uri = vscode.Uri.parse(`data:application/octet-stream;base64,${base64Content}`);
+
+    vscode.env.clipboard.writeText(base64Content);
+    vscode.window.showInformationMessage(i18n.__('base64.fileConvertedToBase64'));
+    vscode.commands.executeCommand('vscode.open', base64Uri);
+  } catch (error) {
+    vscode.window.showErrorMessage(i18n.__('base64.errorConvertingFile'));
+  }
+};

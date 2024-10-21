@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import i18n from '../I18n';
-import { convertBase64ToFile } from '../utils/base64Utils';
+import { convertBase64ToFile, convertFileToBase64 } from '../utils/base64Utils';
 
 export async function base64ToFileCommand() {
   const base64Input = await vscode.window.showInputBox({
@@ -15,3 +15,19 @@ export async function base64ToFileCommand() {
 
   await convertBase64ToFile(base64Input);
 }
+
+export async function fileToBase64Command() {
+  const fileUri = await vscode.window.showOpenDialog({
+    canSelectFiles: true,
+    canSelectFolders: false,
+    canSelectMany: false,
+    openLabel: i18n.__('base64.selectFileToConvert'),
+  });
+
+  if (!fileUri) {
+    vscode.window.showErrorMessage(i18n.__('base64.noFileSelected'));
+    return;
+  }
+
+  await convertFileToBase64(fileUri[0]);
+};

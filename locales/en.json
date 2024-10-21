@@ -24,5 +24,13 @@
 		"button": "Convert",
 		"alert": "Alert",
 		"successMessage": "File saved successfully"
+	},
+	"fileConverter": {
+		"title": "File Converter",
+		"error": "Error",
+		"label": "File Converter",
+		"button": "Convert",
+		"alert": "Alert",
+		"successMessage": "File saved successfully"
 	}
 }
