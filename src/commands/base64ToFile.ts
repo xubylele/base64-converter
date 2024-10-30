@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import i18n from '../I18n';
 import { convertBase64ToFile, convertFileToBase64 } from '../utils/base64Utils';
 
-export async function base64ToFileCommand() {
+export async function base64ToFileCommand(context: vscode.ExtensionContext) {
   const base64Input = await vscode.window.showInputBox({
     prompt: i18n.__('base64.putBase64'),
     placeHolder: 'SGVsbG8gd29ybGQh==',
@@ -13,7 +13,7 @@ export async function base64ToFileCommand() {
     return;
   }
 
-  await convertBase64ToFile(base64Input);
+  await convertBase64ToFile(context, base64Input);
 }
 
 export async function fileToBase64Command() {
