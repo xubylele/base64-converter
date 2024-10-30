@@ -19,17 +19,7 @@ export function openFileConverterView() {
     async (message) => {
       if (message.command === 'convertFile') {
         const fileUri = message.fileUri;
-
-        try {
-          await convertFileToBase64(fileUri);
-
-          panel.webview.postMessage({
-            command: 'conversionSuccess',
-            message: i18n.__('fileConverter.successMessage')
-          });
-        } catch (error) {
-          vscode.window.showErrorMessage(i18n.__('fileConverter.error'));
-        }
+        await convertFileToBase64(fileUri);
       }
     },
     undefined,
@@ -78,6 +68,16 @@ function getWebviewContent(): string {
             });
             return;
           }
+          
+          const reader = new FileReader();
+          reader.onload = () => {
+            vscode.postMessage({
+              command: 'convertFile',
+              fileUri: reader.result
+            });
+          };
+
+          reader.readAsDataURL(file);
         }
       </script>
     </body>

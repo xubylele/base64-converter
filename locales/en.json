@@ -15,7 +15,10 @@
 		"notOutputUbication": "You did not enter the output location",
 		"saveFileAs": "Save file as {{fileName}}",
 		"errorSavingFile": "Error saving the file, please try again",
-		"base64ToFile": "base64.base64ToFile"
+		"selectFileToConvert": "Select the file you want to convert",
+		"base64ContentCopied": "Base64 content copied to clipboard",
+		"fileConvertedToBase64": "File converted to base64",
+		"errorConvertingFile": "Error converting the file, please try again"
 	},
 	"base64Converter": {
 		"title": "Base64 Converter",

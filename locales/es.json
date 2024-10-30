@@ -15,8 +15,10 @@
 		"notOutputUbication": "No has introducido la ubicación de salida",
 		"saveFileAs": "Guardar archivo como {{fileName}}",
 		"errorSavingFile": "Error al guardar el archivo, por favor, inténtalo de nuevo",
-		"selectFileToConvert": "base64.selectFileToConvert",
-		"fileConvertedToBase64": "base64.fileConvertedToBase64"
+		"selectFileToConvert": "Selecciona el archivo que deseas convertir",
+		"base64ContentCopied": "Contenido base64 copiado al portapapeles",
+		"fileConvertedToBase64": "Archivo convertido a base64",
+		"errorConvertingFile": "Error al convertir el archivo, por favor, inténtalo de nuevo"
 	},
 	"base64Converter": {
 		"title": "Convertidor Base64",
