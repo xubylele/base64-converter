@@ -29,3 +29,15 @@ All notable changes to the "base64-converter" extension will be documented in th
 ### 🔧 Improvements
 
 - Enhanced user experience by providing feedback on successful file conversions directly in the UI.
+
+## [1.2.1] - 2024-10-30
+
+### 🌟 New Features
+
+- **Save file path**:
+  - Added a feature to save the file path to global storage.
+  - When the user saves a new file, the path is stored and displayed in the UI. This allows users to easily access the saved file.
+
+### 🔧 Improvement
+
+- Enhanced user experience by providing quick access to the saved file path.

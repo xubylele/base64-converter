@@ -1,8 +1,9 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import i18n from '../I18n';
+import { getConversionPath, saveConversionPath } from './conversionPath';
 
-export async function convertBase64ToFile(base64Input: string) {
+export async function convertBase64ToFile(context: vscode.ExtensionContext, base64Input: string) {
   const extensionOptions = ['pdf', 'txt', 'png', 'jpg', 'docx', i18n.__('base64.other')];
   const selectedExtension = await vscode.window.showQuickPick(extensionOptions, {
     placeHolder: i18n.__('base64.selectFileExtension'),
@@ -21,10 +22,12 @@ export async function convertBase64ToFile(base64Input: string) {
     return;
   }
 
+  const lastSelectedPath = getConversionPath(context);
+
   const saveUri = await vscode.window.showSaveDialog({
     saveLabel: i18n.__('base64.saveConvertedFile'),
     filters: { [i18n.__('fileUtils.allFiles')]: ['*'] },
-    defaultUri: vscode.Uri.file(`output.${fileExtension}`),
+    defaultUri: lastSelectedPath ? vscode.Uri.file(lastSelectedPath) : vscode.Uri.file(`output.${fileExtension}`),
   });
 
   if (!saveUri) {
@@ -41,6 +44,8 @@ export async function convertBase64ToFile(base64Input: string) {
         vscode.window.showInformationMessage(i18n.__('base64.saveFileAs', { fileName: saveUri.fsPath }));
       }
     });
+
+    saveConversionPath(context, saveUri.fsPath);
   } catch (error) {
     vscode.window.showErrorMessage(i18n.__('base64.errorSavingFile'));
   }
