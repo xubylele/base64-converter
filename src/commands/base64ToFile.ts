@@ -29,5 +29,5 @@ export async function fileToBase64Command() {
     return;
   }
 
-  await convertFileToBase64(fileUri[0]);
+  await convertFileToBase64(fileUri[0].fsPath);
 };

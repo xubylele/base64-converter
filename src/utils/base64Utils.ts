@@ -51,24 +51,25 @@ export async function convertBase64ToFile(context: vscode.ExtensionContext, base
   }
 };
 
-export async function convertFileToBase64(fileUri: vscode.Uri) {
+export async function convertFileToBase64(fileUri: any) {
   try {
-    if (fileUri.scheme === 'data') {
-      vscode.env.clipboard.writeText(fileUri.path);
+    let base64Content = '';
+    if (fileUri?.includes('base64,')) {
+      vscode.window.showInformationMessage(fileUri);
+      vscode.env.clipboard.writeText(fileUri);
       vscode.window.showInformationMessage(i18n.__('base64.base64ContentCopied'));
-      return;
+      base64Content = fileUri;
+    } else {
+      const fileContent = fs.readFileSync(fileUri);
+      base64Content = fileContent.toString('base64');
+      vscode.window.showInformationMessage(base64Content);
+      vscode.env.clipboard.writeText(base64Content);
+      vscode.window.showInformationMessage(i18n.__('base64.base64ContentCopied'));
     }
 
-
-    const fileContent = fs.readFileSync(fileUri.fsPath);
-    const base64Content = Buffer.from(fileContent).toString('base64');
-    const base64Uri = vscode.Uri.parse(`data:application/octet-stream;base64,${base64Content}`);
-
-    vscode.env.clipboard.writeText(base64Content);
-    vscode.window.showInformationMessage(i18n.__('base64.fileConvertedToBase64'));
-    vscode.commands.executeCommand('vscode.open', base64Uri);
+    return base64Content;
   } catch (error) {
     console.error(error);
-    vscode.window.showErrorMessage(i18n.__('base64.errorConvertingFile'));
+    vscode.window.showErrorMessage(i18n.__('base64.errorConvertingFile') + error);
   }
 };

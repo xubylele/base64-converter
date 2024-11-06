@@ -34,6 +34,9 @@
 		"label": "File Converter",
 		"button": "Convert",
 		"alert": "Alert",
-		"successMessage": "File saved successfully"
+		"successMessage": "File saved successfully",
+		"noFileSelected": "No file selected",
+		"selectFile": "Select file",
+		"convert": "Convert"
 	}
 }

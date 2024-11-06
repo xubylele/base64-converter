@@ -35,6 +35,8 @@
 		"button": "Convertir",
 		"alert": "Alerta",
 		"successMessage": "Archivo guardado correctamente",
-		"noFileSelected": "fileConverter.noFileSelected"
+		"noFileSelected": "No se seleccionó ningún archivo",
+		"selectFile": "Seleccionar archivo",
+		"convert": "Convertir"
 	}
 }

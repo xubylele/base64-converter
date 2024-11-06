@@ -19,7 +19,12 @@ export function openFileConverterView() {
     async (message) => {
       if (message.command === 'convertFile') {
         const fileUri = message.fileUri;
-        await convertFileToBase64(fileUri);
+        const base64Content = await convertFileToBase64(fileUri);
+
+        if (!base64Content) {
+          vscode.window.showErrorMessage(i18n.__('base64.errorConvertingFile'));
+          return;
+        }
       }
     },
     undefined,
@@ -51,8 +56,13 @@ function getWebviewContent(): string {
     <body>
       <h1>${i18n.__('fileConverter.title')}</h1>
       <div class="input-section">
-        <input type="file" id="fileInput" />
-        <button onclick="convertFile()">Convert</button>
+        <div>
+          <label for="fileInput">${i18n.__('fileConverter.selectFile')}</label>
+        </div>
+        <div>
+          <input type="file" id="fileInput">
+        </div>
+        <button onclick="convertFile()">${i18n.__('fileConverter.convert')}</button>
       </div>
       <script>
         const vscode = acquireVsCodeApi();
@@ -78,6 +88,7 @@ function getWebviewContent(): string {
           };
 
           reader.readAsDataURL(file);
+          fileInput.value = '';
         }
       </script>
     </body>
