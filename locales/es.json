@@ -1,27 +1,42 @@
 {
-  "fileUtils": {
-    "fileSavedSuccessfully": "Archivo guardado correctamente",
-    "errorSavingFile": "Error al guardar el archivo, por favor, inténtalo de nuevo",
-    "allFiles": "Todos los archivos"
-  },
-  "base64": {
-    "putBase64": "Pega tu base64 aquí",
-    "noBase64": "No introduciste ningún base64",
-    "other": "Otros",
-    "selectFileExtension": "Selecciona la extensión del archivo o elige Otro para introducir una personalizada",
-    "enterCustomFileExtension": "Introduce la extensión del archivo, sin el punto",
-    "notFileExtension": "No introdujiste ninguna extensión de archivo",
-    "saveConvertedFile": "Guardar archivo convertido",
-    "notOutputUbication": "No has introducido la ubicación de salida",
-    "saveFileAs": "Guardar archivo como {{fileName}}",
-    "errorSavingFile": "Error al guardar el archivo, por favor, inténtalo de nuevo"
-  },
-  "base64Converter": {
-    "title": "Convertidor Base64",
-    "error": "Error",
-    "label": "Convertidor Base64",
-    "button": "Convertir",
-    "alert": "Alerta",
-    "successMessage": "Archivo guardado correctamente"
-  }
+	"fileUtils": {
+		"fileSavedSuccessfully": "Archivo guardado correctamente",
+		"errorSavingFile": "Error al guardar el archivo, por favor, inténtalo de nuevo",
+		"allFiles": "Todos los archivos"
+	},
+	"base64": {
+		"putBase64": "Pega tu base64 aquí",
+		"noBase64": "No introduciste ningún base64",
+		"other": "Otros",
+		"selectFileExtension": "Selecciona la extensión del archivo o elige Otro para introducir una personalizada",
+		"enterCustomFileExtension": "Introduce la extensión del archivo, sin el punto",
+		"notFileExtension": "No introdujiste ninguna extensión de archivo",
+		"saveConvertedFile": "Guardar archivo convertido",
+		"notOutputUbication": "No has introducido la ubicación de salida",
+		"saveFileAs": "Guardar archivo como {{fileName}}",
+		"errorSavingFile": "Error al guardar el archivo, por favor, inténtalo de nuevo",
+		"selectFileToConvert": "Selecciona el archivo que deseas convertir",
+		"base64ContentCopied": "Contenido base64 copiado al portapapeles",
+		"fileConvertedToBase64": "Archivo convertido a base64",
+		"errorConvertingFile": "Error al convertir el archivo, por favor, inténtalo de nuevo"
+	},
+	"base64Converter": {
+		"title": "Convertidor Base64",
+		"error": "Error",
+		"label": "Convertidor Base64",
+		"button": "Convertir",
+		"alert": "Alerta",
+		"successMessage": "Archivo guardado correctamente"
+	},
+	"fileConverter": {
+		"title": "Convertidor de Archivos",
+		"error": "Error",
+		"label": "Convertidor de Archivos",
+		"button": "Convertir",
+		"alert": "Alerta",
+		"successMessage": "Archivo guardado correctamente",
+		"noFileSelected": "No se seleccionó ningún archivo",
+		"selectFile": "Seleccionar archivo",
+		"convert": "Convertir"
+	}
 }

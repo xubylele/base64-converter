@@ -2,7 +2,7 @@
   "name": "base64-converter",
   "displayName": "Base64 converter",
   "description": "A base64 converter",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "publisher": "Xubylele",
   "icon": "assets/logo.png",
   "engines": {
@@ -24,8 +24,16 @@
         "title": "%base64ToFileCommand.title%"
       },
       {
+        "command": "extension.fileToBase64",
+        "title": "%fileToBase64Command.title%"
+      },
+      {
         "command": "extension.openBase64ConverterView",
         "title": "%openBase64ConverterViewCommand.title%"
+      },
+      {
+        "command": "extension.openFileConverterView",
+        "title": "%openFileConverterViewCommand.title%"
       }
     ]
   },

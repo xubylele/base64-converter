@@ -41,3 +41,18 @@ All notable changes to the "base64-converter" extension will be documented in th
 ### 🔧 Improvement
 
 - Enhanced user experience by providing quick access to the saved file path.
+
+## [2.0.0] - 2024-11-06
+
+### 🌟 New Features
+
+- **File to Base64 Conversion**:
+  - Added functionality to convert a file to a Base64 string.
+  - Users can now select a file from the file system and convert it to a Base64 string.
+  - The Base64 string is displayed in the UI for easy access and copying.
+  - The Base64 string will be automatically copied to the clipboard for convenience.
+
+### 🔧 Improvements
+
+- Enhanced user experience by providing a two-way conversion between files and Base64 strings.
+- Improved UI feedback for file selection and conversion.
