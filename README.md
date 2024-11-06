@@ -1,6 +1,6 @@
 # Base64 converter
 
-**Base64 converter** is a Visual Studio Code extension that allows you to quickly and securely convert Base64 strings into files. This tool is designed with performance and security in mind, providing an efficient way to handle Base64 data conversion directly from your editor.
+**Base64 converter** is a Visual Studio Code extension that allows you to quickly and securely convert Base64 strings into files and vice versa. With this extension, you can easily convert Base64 strings to popular file formats such as `pdf`, `txt`, `png`, `jpg`, `docx`, and more. The extension provides a new graphical interface that simplifies the conversion process and ensures that your data remains secure.
 
 ## Donations
 
@@ -11,7 +11,7 @@ If you find this extension helpful, consider supporting the developer by buying 
 ## Features
 
 - **Fast and Secure Conversion**:
-  - Convert Base64 strings to files with just a few clicks.
+  - Convert Base64 strings to files and vice versa quickly and securely.
   - No external dependencies or online services are required, ensuring your data stays secure.
   
 - **Supported File Extensions**:
@@ -19,13 +19,17 @@ If you find this extension helpful, consider supporting the developer by buying 
   - Option to specify custom file extensions for less common formats.
 
 - **New Graphical Interface**:
-  - We have introduced a new user-friendly interface that allows you to easily convert Base64 strings into files without using the command palette.
+  - We have introduced a new user-friendly interface that allows you to easily convert Base64 strings into files and vice versa.
   - The interface includes real-time feedback for successful conversions and automatic clearing of the input field after each operation.
 
-## Example
+## Example Base64 Conversion
 
 Here's a quick example of how you can use the Base64 converter extension to convert a Base64 string into a PNG file:
 ![Base64 converter example](https://i.imgur.com/tEmCxmv.png)
+
+## Example File to Base64 Conversion
+
+Here's a quick example of how you can use the Base64 converter extension to convert a PNG file into a Base64 string: ![Base64 converter example](https://i.imgur.com/gEGzT9D.png)
 
 ## Installation
 
@@ -59,10 +63,6 @@ Alternatively, you can install the extension from the [Visual Studio Code Market
 
 - **Common Formats**: `pdf`, `txt`, `png`, `jpg`, `docx`.
 - **Custom Extensions**: You can define any custom file extension by selecting the "Other" option.
-
-## Customization
-
-You can customize the behavior of the extension through Visual Studio Code's settings. For instance, you can change default file paths or file types in future releases.
 
 ## Contributing
 
