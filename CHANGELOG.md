@@ -56,3 +56,9 @@ All notable changes to the "base64-converter" extension will be documented in th
 
 - Enhanced user experience by providing a two-way conversion between files and Base64 strings.
 - Improved UI feedback for file selection and conversion.
+
+## [2.0.1] - 2024-12-03
+
+### 🔧 Improvements
+
+- Update logo.
