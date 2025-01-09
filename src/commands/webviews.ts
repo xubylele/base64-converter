@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
+import { WorkspaceStateManager } from '../managers/WorkspaceStateManager';
 
 export function createWebview(context: vscode.ExtensionContext): vscode.WebviewPanel {
   const panel = vscode.window.createWebviewPanel(
@@ -33,6 +34,12 @@ export function createWebview(context: vscode.ExtensionContext): vscode.WebviewP
 }
 
 function getWebviewContent(context: vscode.ExtensionContext, webview: vscode.Webview): string {
+  const workSpaceManager = new WorkspaceStateManager(context, 'conversionHistory');
+
+  const params = {
+    history: workSpaceManager.getAll(),
+  };
+
   const cssUri = webview.asWebviewUri(
     vscode.Uri.file(path.join(context.extensionPath, 'src', 'css', 'output.css'))
   );
@@ -41,17 +48,25 @@ function getWebviewContent(context: vscode.ExtensionContext, webview: vscode.Web
   );
 
   return `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conversion History</title>
-        <link href="${cssUri}" rel="stylesheet">
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module" src="${jsUri}"></script>
-    </body>
-    </html>`;
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Conversion History</title>
+      <link href="${cssUri}" rel="stylesheet">
+  </head>
+  <body>
+      <div id="root">Loading...</div>
+      <script>
+        if (!window.vscode) {
+              window.vscode = acquireVsCodeApi();
+          }
+      </script>
+      <script>
+          const params = ${JSON.stringify(params)};
+      </script>
+      <script type="module" src="${jsUri}"></script>
+  </body>
+  </html>`;
 }
