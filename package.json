@@ -6,10 +6,16 @@
   "publisher": "Xubylele",
   "icon": "assets/logo.png",
   "engines": {
-    "vscode": "^1.93.0"
+    "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
+  ],
+  "files": [
+    "out/**/*",
+    "src/webview/index.html",
+    "src/css/output.css",
+    "src/**/*.js"
   ],
   "main": "./out/extension.js",
   "activationEvents": [],
@@ -43,18 +49,20 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
-    "compile": "yarn run check-types && yarn run lint && node esbuild.js",
-    "build": "node esbuild.js --production",
-    "watch": "node esbuild.js --watch",
+    "compile": "yarn run check-types && yarn run lint && yarn run build:tailwind && node esbuild.js",
+    "build": "yarn run build:tailwind && node esbuild.js --production",
+    "watch": "yarn run build:tailwind && node esbuild.js --watch",
     "watch:esbuild": "node esbuild.js --watch",
-    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "package": "yarn run check-types && yarn run lint && yarn run build:tailwind && node esbuild.js --production",
     "check-types": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build:tailwind": "npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/output.css --minify"
   },
   "devDependencies": {
     "@types/i18n": "^0.13.12",
     "@types/mocha": "^10.0.8",
     "@types/node": "22.10.5",
+    "@types/react": "^19.0.4",
     "@types/vscode": "1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
@@ -68,6 +76,11 @@
     "vscode": "^1.1.37"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.17",
     "uuid": "^11.0.4"
   }
 }
