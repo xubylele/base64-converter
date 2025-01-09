@@ -11,7 +11,7 @@
   "categories": [
     "Other"
   ],
-  "main": "./dist/extension.js",
+  "main": "./out/extension.js",
   "activationEvents": [],
   "repository": {
     "type": "git",
@@ -43,20 +43,15 @@
     "build": "node esbuild.js --production",
     "watch": "node esbuild.js --watch",
     "watch:esbuild": "node esbuild.js --watch",
-    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
-    "package": "yarn run check-types && yarn run lint && node esbuild.js --production",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
     "check-types": "tsc --noEmit",
-    "lint": "eslint src",
-    "test": "vscode-test"
+    "lint": "eslint src"
   },
   "devDependencies": {
     "@types/i18n": "^0.13.12",
     "@types/mocha": "^10.0.8",
-    "@types/node": "20.x",
-    "@types/vscode": "1.82.0",
+    "@types/node": "22.10.5",
+    "@types/vscode": "1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vscode/test-cli": "^0.0.10",
@@ -67,5 +62,8 @@
     "npm-run-all": "^4.1.5",
     "typescript": "^5.6.2",
     "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "uuid": "^11.0.4"
   }
 }

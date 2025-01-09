@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { convertFileToBase64 } from '../utils/base64Utils';
 import i18n from '../I18n';
 
-export function openFileConverterView() {
+export function openFileConverterView(context: vscode.ExtensionContext) {
   const panel = vscode.window.createWebviewPanel(
     'fileConverter',
     i18n.__('fileConverter.title'),
@@ -19,7 +19,7 @@ export function openFileConverterView() {
     async (message) => {
       if (message.command === 'convertFile') {
         const fileUri = message.fileUri;
-        const base64Content = await convertFileToBase64(fileUri);
+        const base64Content = await convertFileToBase64(fileUri, context);
 
         if (!base64Content) {
           vscode.window.showErrorMessage(i18n.__('base64.errorConvertingFile'));
