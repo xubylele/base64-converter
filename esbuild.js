@@ -8,7 +8,7 @@ const production = args.includes('--production');
 const config = {
 	entryPoints: ['./src/extension.ts'],
 	bundle: true,
-	outfile: 'dist/extension.js',
+	outfile: 'out/extension.js',
 	external: ['vscode'],
 	format: 'cjs',
 	platform: 'node',
