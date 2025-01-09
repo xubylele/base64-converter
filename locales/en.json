@@ -38,5 +38,8 @@
 		"noFileSelected": "No file selected",
 		"selectFile": "Select file",
 		"convert": "Convert"
+	},
+	"history": {
+		"panelTitle": "Conversion history"
 	}
 }
