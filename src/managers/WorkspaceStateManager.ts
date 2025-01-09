@@ -27,7 +27,6 @@ export class WorkspaceStateManager<T extends any[]> {
    */
   public add(value: HistoryEntry): void {
     const history = this.getAll();
-    console.info('history', history);
     history.unshift(value);
 
     if (history.length > MAX_ENTRIES) {
