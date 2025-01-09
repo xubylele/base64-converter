@@ -1,55 +1,28 @@
-const esbuild = require("esbuild");
+/* eslint-env node */
+const esbuild = require('esbuild');
 
-const production = process.argv.includes('--production');
-const watch = process.argv.includes('--watch');
+const args = process.argv.slice(2);
+const watch = args.includes('--watch');
+const production = args.includes('--production');
 
-const esbuildProblemMatcherPlugin = {
-	name: 'esbuild-problem-matcher',
-
-	setup(build) {
-		build.onStart(() => {
-			console.log('[watch] build started');
-		});
-		build.onEnd((result) => {
-			result.errors.forEach(({ text, location }) => {
-				console.error(`✘ [ERROR] ${text}`);
-				if (location) {
-					console.error(`    ${location.file}:${location.line}:${location.column}:`);
-				}
-			});
-			console.log('[watch] build finished');
-		});
-	},
+const config = {
+	entryPoints: ['./src/extension.ts'],
+	bundle: true,
+	outfile: 'dist/extension.js',
+	external: ['vscode'],
+	format: 'cjs',
+	platform: 'node',
+	sourcemap: !production,
+	minify: production
 };
 
-async function main() {
-	const ctx = await esbuild.context({
-		entryPoints: [
-			'src/extension.ts'
-		],
-		bundle: true,
-		format: 'cjs',
-		minify: production,
-		sourcemap: !production,
-		sourcesContent: false,
-		platform: 'node',
-		outfile: 'dist/extension.js',
-		external: ['vscode'],
-		logLevel: 'silent',
-		plugins: [
-			esbuildProblemMatcherPlugin,
-		],
-	});
+async function build() {
 	if (watch) {
-		console.log("[watch] watching for changes...");
-		await ctx.watch();
+		const context = await esbuild.context(config);
+		await context.watch();
 	} else {
-		await ctx.rebuild();
-		await ctx.dispose();
+		await esbuild.build(config);
 	}
 }
 
-main().catch(e => {
-	console.error(e);
-	process.exit(1);
-});
+build().catch(() => process.exit(1));
