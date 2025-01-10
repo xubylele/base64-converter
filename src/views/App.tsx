@@ -44,7 +44,7 @@ const App: React.FC = () => {
         }
       </main>
       <footer className="py-4 bg-gray-200 dark:bg-gray-800 text-center">
-        <p className="text-sm">Base64 Studio &copy; {new Date().getFullYear()}</p>
+        <p className="text-sm">Base64 Studio &copy; 2024</p>
       </footer>
     </div>
   );
