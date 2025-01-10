@@ -1,6 +1,6 @@
-# Base64 converter
+# Base64 Studio
 
-**Base64 converter** is a Visual Studio Code extension that allows you to quickly and securely convert Base64 strings into files and vice versa. With this extension, you can easily convert Base64 strings to popular file formats such as `pdf`, `txt`, `png`, `jpg`, `docx`, and more. The extension provides a new graphical interface that simplifies the conversion process and ensures that your data remains secure.
+**Base64 Studio** is a Visual Studio Code extension that allows you to quickly and securely convert Base64 strings into files and vice versa. With this extension, you can easily convert Base64 strings to popular file formats such as `pdf`, `txt`, `png`, `jpg`, `docx`, and more. The extension provides a new graphical interface that simplifies the conversion process and ensures that your data remains secure.
 
 ## Donations
 
@@ -30,18 +30,18 @@ If you find this extension helpful, consider supporting the developer by buying 
 
 ## Example Base64 Conversion
 
-Here's a quick example of how you can use the Base64 converter extension to convert a Base64 string into a PNG file:
-![Base64 converter example](https://i.imgur.com/tEmCxmv.png)
+Here's a quick example of how you can use the Base64 Studio extension to convert a Base64 string into a PNG file:
+![Base64 Studio example](https://i.imgur.com/tEmCxmv.png)
 
 ## Example File to Base64 Conversion
 
-Here's a quick example of how you can use the Base64 converter extension to convert a PNG file into a Base64 string: ![Base64 converter example](https://i.imgur.com/gEGzT9D.png)
+Here's a quick example of how you can use the Base64 Studio extension to convert a PNG file into a Base64 string: ![Base64 Studio example](https://i.imgur.com/gEGzT9D.png)
 
 ## Installation
 
 1. Open Visual Studio Code.
 2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or press `Ctrl+Shift+X`.
-3. Search for `Base64 converter`.
+3. Search for `Base64 Studio`.
 4. Click **Install**.
 
 Alternatively, you can install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Xubylele.base64-converter).
@@ -52,7 +52,7 @@ Alternatively, you can install the extension from the [Visual Studio Code Market
 
 1. Open Visual Studio Code.
 2. Press `Ctrl+Shift+P` to open the command palette.
-3. Type `Base64 converter` and select the command.
+3. Type `Base64 Studio` and select the command.
 4. Enter the Base64 string you want to convert.
 5. Choose the file format you want to convert the Base64 string into.
 6. The file will be saved in the specified location.
