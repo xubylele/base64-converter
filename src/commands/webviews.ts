@@ -30,7 +30,6 @@ export function createWebview(context: vscode.ExtensionContext): vscode.WebviewP
           return;
         }
 
-        console.log(entry.id);
         break;
       case 'reuse':
         vscode.window.showInformationMessage(`Reusing file for ID: ${message.id}`);
@@ -48,7 +47,7 @@ function getWebviewContent(
 ): string {
   const params = {
     history: workSpaceManager.getAll(),
-    component: 'history'
+    component: 'history',
   };
 
   const cssUri = webview.asWebviewUri(
@@ -57,8 +56,6 @@ function getWebviewContent(
   const jsUri = webview.asWebviewUri(
     vscode.Uri.file(path.join(context.extensionPath, 'out', 'App.js'))
   );
-
-  console.log(cssUri, jsUri);
 
   return `
   <!DOCTYPE html>

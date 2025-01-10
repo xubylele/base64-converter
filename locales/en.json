@@ -40,6 +40,11 @@
 		"convert": "Convert"
 	},
 	"history": {
-		"panelTitle": "Conversion history"
+		"panelTitle": "Conversion history",
+		"timestamp": "Timestamp",
+		"path": "Path",
+		"copy": "Copy",
+		"reuse": "Reuse",
+		"noHistoryFound": "No history found"
 	}
 }

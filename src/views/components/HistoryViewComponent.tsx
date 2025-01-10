@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import i18n from '../../I18n';
 import { HistoryEntry } from '../../types/history';
 
 declare const params: { history: HistoryEntry[] };
@@ -26,7 +27,7 @@ const HistoryViewComponent: React.FC = () => {
 
   return (
     <div className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold mb-6">Conversion History</h1>
+      <h1 className="text-3xl font-bold mb-6">{i18n.__('history.panelTitle')}</h1>
 
       {history?.length > 0 ? (
         <div className="w-full max-w-2xl space-y-4">
@@ -36,10 +37,10 @@ const HistoryViewComponent: React.FC = () => {
               className="p-4 border rounded-lg bg-gray-100 dark:bg-gray-800 shadow hover:shadow-lg transition"
             >
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
-                <strong>Timestamp:</strong> {new Date(entry.timestamp).toLocaleString()}
+                <strong>{i18n.__('history.timestamp')}:</strong> {new Date(entry.timestamp).toLocaleString()}
               </p>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
-                <strong>Path:</strong> {entry.outputPath || entry.input}
+                <strong>{i18n.__('history.path')}:</strong> {entry.outputPath || entry.input}
               </p>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
                 <span className={`px-2 py-1 rounded text-white ${typeColors[entry.type]}`}>
@@ -51,20 +52,20 @@ const HistoryViewComponent: React.FC = () => {
                   onClick={() => handleCopy(entry.id)}
                   className="px-4 py-2 bg-blue-500 dark:bg-blue-700 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-800"
                 >
-                  Copy
+                  {i18n.__('history.copy')}
                 </button>
                 <button
                   onClick={() => handleReuse(entry.id)}
                   className="px-4 py-2 bg-green-500 dark:bg-green-700 text-white rounded hover:bg-green-600 dark:hover:bg-green-800"
                 >
-                  Reuse
+                  {i18n.__('history.reuse')}
                 </button>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <p className="text-gray-500 dark:text-gray-400">No conversion history found.</p>
+        <p className="text-gray-500 dark:text-gray-400">{i18n.__('history.noHistoryFound')}</p>
       )}
     </div>
   );
