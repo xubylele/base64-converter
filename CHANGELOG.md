@@ -2,6 +2,24 @@
 
 All notable changes to the "base64-converter" extension will be documented in this file.
 
+## [2.1.0] - 2025-01-
+
+### 🌟 New Features 2.1.0
+
+- **Conversion History UI**:
+  - Added a new WebView panel to display the conversion history in a user-friendly interface.
+  - Users can:
+    - View all past conversions with details such as timestamp, conversion type, and file path.
+    - Copy Base64 strings directly from the history.
+    - Reuse previously converted files.
+  - Includes dark mode support that adapts to the user’s system preferences or allows manual toggling.
+
+### 🔧 Improvements 2.1.0
+
+- Enhanced UI/UX for history interactions with smooth transitions and responsive design.
+
+---
+
 ## [2.0.1] - 2024-12-03
 
 ### 🔧 Improvements 2.0.1
@@ -76,3 +94,4 @@ All notable changes to the "base64-converter" extension will be documented in th
 
 - Added functionality to convert a Base64 string to a file and save it to the filesystem.
 - Users can specify the file extension or input a custom extension.
+
