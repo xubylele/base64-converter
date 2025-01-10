@@ -60,7 +60,7 @@ Alternatively, you can install the extension from the [Visual Studio Code Market
 ### Option 2: Using the New Graphical Interface
 
 1. Open Visual Studio Code.
-2. Run the command `Open Base64 Converter View` from the command palette or access it from the side panel.
+2. Run the command `Open Base64 Studio View` from the command palette or access it from the side panel.
 3. Enter the Base64 string in the input field.
 4. Click **Convert to File**.
 5. After successful conversion, the file will be saved, and the input field will be cleared automatically.

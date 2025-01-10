@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "base64-converter" extension will be documented in this file.
+All notable changes to the "base64-studio" extension will be documented in this file.
 
 ## [2.1.0] - 2025-01-
 

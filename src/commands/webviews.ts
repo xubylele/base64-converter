@@ -12,7 +12,7 @@ export function createWebview(context: vscode.ExtensionContext): vscode.WebviewP
       enableScripts: true,
       localResourceRoots: [
         vscode.Uri.file(path.join(context.extensionPath, 'out')),
-        vscode.Uri.file(path.join(context.extensionPath, 'src', 'css'))
+        vscode.Uri.file(path.join(context.extensionPath, 'out', 'css'))
       ]
     }
   );
@@ -22,7 +22,6 @@ export function createWebview(context: vscode.ExtensionContext): vscode.WebviewP
   panel.webview.onDidReceiveMessage((message) => {
     switch (message.command) {
       case 'copy':
-        vscode.window.showInformationMessage(`Copying Base64 for ID: ${message.id}`);
         break;
       case 'reuse':
         vscode.window.showInformationMessage(`Reusing file for ID: ${message.id}`);
@@ -38,14 +37,17 @@ function getWebviewContent(context: vscode.ExtensionContext, webview: vscode.Web
 
   const params = {
     history: workSpaceManager.getAll(),
+    component: 'history'
   };
 
   const cssUri = webview.asWebviewUri(
-    vscode.Uri.file(path.join(context.extensionPath, 'src', 'css', 'output.css'))
+    vscode.Uri.file(path.join(context.extensionPath, 'out', 'css', 'output.css'))
   );
   const jsUri = webview.asWebviewUri(
     vscode.Uri.file(path.join(context.extensionPath, 'out', 'App.js'))
   );
+
+  console.log(cssUri, jsUri);
 
   return `
   <!DOCTYPE html>

@@ -21,9 +21,9 @@
 		"errorConvertingFile": "Error converting the file, please try again"
 	},
 	"base64Converter": {
-		"title": "Base64 Converter",
+		"title": "Base64 Studio",
 		"error": "Error",
-		"label": "Base64 Converter",
+		"label": "Base64 Studio",
 		"button": "Convert",
 		"alert": "Alert",
 		"successMessage": "File saved successfully"

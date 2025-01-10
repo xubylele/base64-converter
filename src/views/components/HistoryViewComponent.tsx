@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import { WorkspaceStateManager } from '../managers/WorkspaceStateManager';
-import { HistoryEntry } from '../types/history';
+import { HistoryEntry } from '../../types/history';
 
 declare const params: { history: HistoryEntry[] };
 declare global {
@@ -10,29 +8,9 @@ declare global {
   }
 }
 
-const App: React.FC = () => {
+const HistoryViewComponent: React.FC = () => {
   const vscode = window.vscode;
-  const [isDarkMode, setIsDarkMode] = useState(
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  );
   const [history, setHistory] = useState<HistoryEntry[]>(params.history);
-  console.log(history);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => setIsDarkMode(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  useEffect(() => {
-    const htmlElement = document.documentElement;
-    if (isDarkMode) {
-      htmlElement.classList.add('dark');
-    } else {
-      htmlElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
 
   const handleCopy = (id: string) => {
     vscode.postMessage({ command: 'copy', id });
@@ -82,19 +60,8 @@ const App: React.FC = () => {
       ) : (
         <p className="text-gray-500 dark:text-gray-400">No conversion history found.</p>
       )}
-
-      <button
-        onClick={() => setIsDarkMode((prev) => !prev)}
-        className="mt-8 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
-      >
-        Toggle Dark Mode
-      </button>
     </div>
   );
 };
 
-const rootElement = document.getElementById('root');
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(<App />);
-}
+export default HistoryViewComponent;

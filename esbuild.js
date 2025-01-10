@@ -19,7 +19,7 @@ const extensionConfig = {
 };
 
 const webviewConfig = {
-	entryPoints: ['./src/webview/App.tsx'],
+	entryPoints: ['./src/views/App.tsx'],
 	bundle: true,
 	outfile: 'out/App.js',
 	format: 'esm',
