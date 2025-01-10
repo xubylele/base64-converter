@@ -11,6 +11,10 @@ declare global {
 const HistoryViewComponent: React.FC = () => {
   const vscode = window.vscode;
   const [history, setHistory] = useState<HistoryEntry[]>(params.history);
+  const typeColors = {
+    FileToBase64: 'bg-blue-500 dark:bg-blue-700',
+    Base64ToFile: 'bg-green-500 dark:bg-green-700'
+  };
 
   const handleCopy = (id: string) => {
     vscode.postMessage({ command: 'copy', id });
@@ -31,16 +35,18 @@ const HistoryViewComponent: React.FC = () => {
               key={entry.id}
               className="p-4 border rounded-lg bg-gray-100 dark:bg-gray-800 shadow hover:shadow-lg transition"
             >
-              <p className="text-sm text-gray-700 dark:text-gray-300">
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
                 <strong>Timestamp:</strong> {new Date(entry.timestamp).toLocaleString()}
               </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                <strong>Type:</strong> {entry.type}
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
+                <strong>Path:</strong> {entry.outputPath || entry.input}
               </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                <strong>Path:</strong> {entry.outputPath}
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
+                <span className={`px-2 py-1 rounded text-white ${typeColors[entry.type]}`}>
+                  {entry.type}
+                </span>
               </p>
-              <div className="mt-3 flex space-x-2">
+              <div className="mt-3 flex space-x-2 mb-1">
                 <button
                   onClick={() => handleCopy(entry.id)}
                   className="px-4 py-2 bg-blue-500 dark:bg-blue-700 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-800"
