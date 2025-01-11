@@ -43,8 +43,11 @@
 		"panelTitle": "Conversion history",
 		"timestamp": "Timestamp",
 		"path": "Path",
-		"copy": "Copy",
+		"copyBase64": "Copy base64",
+		"copyPath": "Copy file path",
 		"reuse": "Reuse",
-		"noHistoryFound": "No history found"
+		"noHistoryFound": "No history found",
+		"Base64ToFile": "Base64 to file",
+		"FileToBase64": "File to base64"
 	}
 }

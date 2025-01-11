@@ -16,8 +16,8 @@ interface HistoryViewProps {
 const HistoryViewComponent: React.FC<HistoryViewProps> = ({ t, history }) => {
   const vscode = window.vscode;
   const typeColors = {
-    FileToBase64: 'bg-blue-500 dark:bg-blue-700',
-    Base64ToFile: 'bg-green-500 dark:bg-green-700'
+    FileToBase64: "bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-900",
+    Base64ToFile: "bg-indigo-100 text-indigo-800 dark:bg-indigo-200 dark:text-indigo-900",
   };
 
   const handleCopy = (id: string) => {
@@ -46,8 +46,8 @@ const HistoryViewComponent: React.FC<HistoryViewProps> = ({ t, history }) => {
                 <strong>{t('history.path')}:</strong> {entry.outputPath || entry.input}
               </p>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
-                <span className={`px-2 py-1 rounded text-white ${typeColors[entry.type]}`}>
-                  {entry.type}
+                <span className={`inline-flex items-center px-2 py-0 5 rounded text-xs font-medium ${typeColors[entry.type]}`}>
+                  {t(`history.${entry.type}`)}
                 </span>
               </p>
               <div className="mt-3 flex space-x-2 mb-1">
@@ -55,13 +55,9 @@ const HistoryViewComponent: React.FC<HistoryViewProps> = ({ t, history }) => {
                   onClick={() => handleCopy(entry.id)}
                   className="px-4 py-2 bg-blue-500 dark:bg-blue-700 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-800"
                 >
-                  {t('history.copy')}
-                </button>
-                <button
-                  onClick={() => handleReuse(entry.id)}
-                  className="px-4 py-2 bg-green-500 dark:bg-green-700 text-white rounded hover:bg-green-600 dark:hover:bg-green-800"
-                >
-                  {t('history.reuse')}
+                  {
+                    entry.type === 'FileToBase64' ? t('history.copyBase64') : t('history.copyPath')
+                  }
                 </button>
               </div>
             </div>

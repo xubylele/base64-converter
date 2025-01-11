@@ -43,8 +43,11 @@
 		"panelTitle": "Historial de conversiones",
 		"timestamp": "Timestamp",
 		"path": "Ruta",
-		"copy": "Copiar",
+		"copyBase64": "Copiar base64",
+		"copyPath": "Copiar ruta de Archivo",
 		"reuse": "Reutilizar",
-		"noHistoryFound": "No se encontró historial"
+		"noHistoryFound": "No se encontró historial",
+		"Base64ToFile": "Base64 a archivo",
+		"FileToBase64": "Archivo a base64"
 	}
 }
