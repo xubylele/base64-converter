@@ -11,12 +11,6 @@
   "categories": [
     "Other"
   ],
-  "files": [
-    "out/**/*",
-    "src/webview/index.html",
-    "src/css/output.css",
-    "src/**/*.js"
-  ],
   "main": "./out/extension.js",
   "activationEvents": [],
   "repository": {
