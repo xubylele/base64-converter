@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import i18n from '../../I18n';
+import React from 'react';
 import { HistoryEntry } from '../../types/history';
 
 declare global {
@@ -22,10 +21,6 @@ const HistoryViewComponent: React.FC<HistoryViewProps> = ({ t, history }) => {
 
   const handleCopy = (id: string) => {
     vscode.postMessage({ command: 'copy', id });
-  };
-
-  const handleReuse = (id: string) => {
-    vscode.postMessage({ command: 'reuse', id });
   };
 
   return (

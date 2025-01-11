@@ -48,6 +48,7 @@
 		"reuse": "Reuse",
 		"noHistoryFound": "No history found",
 		"Base64ToFile": "Base64 to file",
-		"FileToBase64": "File to base64"
+		"FileToBase64": "File to base64",
+		"copiedToClipboard": "Copied to clipboard"
 	}
 }

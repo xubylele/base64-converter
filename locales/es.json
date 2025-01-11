@@ -48,6 +48,7 @@
 		"reuse": "Reutilizar",
 		"noHistoryFound": "No se encontró historial",
 		"Base64ToFile": "Base64 a archivo",
-		"FileToBase64": "Archivo a base64"
+		"FileToBase64": "Archivo a base64",
+		"copiedToClipboard": "Copiado al portapapeles"
 	}
 }

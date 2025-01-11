@@ -3,6 +3,7 @@ import * as vscode from 'vscode';
 import i18n from '../I18n';
 import { WorkspaceStateManager } from '../managers/WorkspaceStateManager';
 import { HistoryEntry } from '../types/history';
+import { copyToClipboard } from '../utils/utils';
 
 export function createWebview(context: vscode.ExtensionContext): vscode.WebviewPanel {
   const workSpaceManager = new WorkspaceStateManager(context, 'conversionHistory');
@@ -29,9 +30,7 @@ export function createWebview(context: vscode.ExtensionContext): vscode.WebviewP
           return;
         }
 
-        break;
-      case 'reuse':
-        vscode.window.showInformationMessage(`Reusing file for ID: ${message.id}`);
+        copyToClipboard(entry.type === 'FileToBase64' ? entry.outputBase64! : entry.outputPath!, 'history.copiedToClipboard');
         break;
     }
   });
@@ -45,7 +44,6 @@ function getWebviewContent(
   workSpaceManager: WorkspaceStateManager<any[]>
 ): string {
   const translations = i18n.getCatalog();
-  console.log(translations);
 
   const params = {
     history: workSpaceManager.getAll(),
