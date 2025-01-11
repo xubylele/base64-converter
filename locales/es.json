@@ -12,7 +12,7 @@
 		"enterCustomFileExtension": "Introduce la extensión del archivo, sin el punto",
 		"notFileExtension": "No introdujiste ninguna extensión de archivo",
 		"saveConvertedFile": "Guardar archivo convertido",
-		"notOutputUbication": "No has introducido la ubicación de salida",
+		"notOutputPath": "No has introducido la ubicación de salida",
 		"saveFileAs": "Guardar archivo como {{fileName}}",
 		"errorSavingFile": "Error al guardar el archivo, por favor, inténtalo de nuevo",
 		"selectFileToConvert": "Selecciona el archivo que deseas convertir",
@@ -38,5 +38,17 @@
 		"noFileSelected": "No se seleccionó ningún archivo",
 		"selectFile": "Seleccionar archivo",
 		"convert": "Convertir"
+	},
+	"history": {
+		"panelTitle": "Historial de conversiones",
+		"timestamp": "Timestamp",
+		"path": "Ruta",
+		"copyBase64": "Copiar base64",
+		"copyPath": "Copiar ruta de Archivo",
+		"reuse": "Reutilizar",
+		"noHistoryFound": "No se encontró historial",
+		"Base64ToFile": "Base64 a archivo",
+		"FileToBase64": "Archivo a base64",
+		"copiedToClipboard": "Copiado al portapapeles"
 	}
 }
