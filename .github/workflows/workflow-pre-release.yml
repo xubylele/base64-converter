@@ -19,8 +19,12 @@ jobs:
         node-version: '18'
 
     - name: Install pnpm
-      run: npm install -g pnpm
-      
+      run: |
+        corepack enable
+        corepack prepare pnpm@latest --activate
+        export PNPM_HOME=$(pnpm config get prefix)/bin
+        export PATH=$PNPM_HOME:$PATH
+
     - name: Install dependencies
       run: pnpm install
 
