@@ -16,7 +16,7 @@ export async function base64ToFileCommand(context: vscode.ExtensionContext) {
   await convertBase64ToFile(context, base64Input);
 }
 
-export async function fileToBase64Command() {
+export async function fileToBase64Command(context: vscode.ExtensionContext) {
   const fileUri = await vscode.window.showOpenDialog({
     canSelectFiles: true,
     canSelectFolders: false,
@@ -29,5 +29,5 @@ export async function fileToBase64Command() {
     return;
   }
 
-  await convertFileToBase64(fileUri[0].fsPath);
+  await convertFileToBase64(fileUri[0].fsPath, context);
 };

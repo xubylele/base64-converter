@@ -2,12 +2,28 @@
   "compilerOptions": {
     "module": "Node16",
     "target": "ES2022",
-    "lib": ["ES2022", "dom"],
+    "jsx": "react",
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
     "sourceMap": true,
     "rootDir": "src",
     "strict": true,
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "vscode"],
-    "skipLibCheck": true
-  }
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "vscode",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
+    "skipLibCheck": true,
+    "outDir": "out"
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
 }

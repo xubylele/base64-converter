@@ -1,7 +1,11 @@
-import * as vscode from 'vscode';
 import * as fs from 'fs';
+import { v4 as uuidv4 } from 'uuid';
+import * as vscode from 'vscode';
 import i18n from '../I18n';
+import { WorkspaceStateManager } from '../managers/WorkspaceStateManager';
+import { HistoryEntry } from '../types/history';
 import { getConversionPath, saveConversionPath } from './conversionPath';
+import { copyToClipboard } from './utils';
 
 export async function convertBase64ToFile(context: vscode.ExtensionContext, base64Input: string) {
   const extensionOptions = ['pdf', 'txt', 'png', 'jpg', 'docx', i18n.__('base64.other')];
@@ -31,11 +35,13 @@ export async function convertBase64ToFile(context: vscode.ExtensionContext, base
   });
 
   if (!saveUri) {
-    vscode.window.showErrorMessage(i18n.__('base64.notOutputUbication'));
+    vscode.window.showErrorMessage(i18n.__('base64.notOutputPath'));
     return;
   }
 
   try {
+    const historyManager = new WorkspaceStateManager<HistoryEntry[]>(context, 'conversionHistory');
+
     const fileContent = Buffer.from(base64Input, 'base64');
     fs.writeFile(saveUri.fsPath, fileContent, (err) => {
       if (err) {
@@ -45,27 +51,46 @@ export async function convertBase64ToFile(context: vscode.ExtensionContext, base
       }
     });
 
+    const newEntry: HistoryEntry = {
+      id: uuidv4(),
+      timestamp: new Date().toISOString(),
+      input: base64Input,
+      outputPath: saveUri.fsPath,
+      fileExtension,
+      type: 'Base64ToFile',
+    };
+    historyManager.add(newEntry);
+
     saveConversionPath(context, saveUri.fsPath);
   } catch (error) {
     vscode.window.showErrorMessage(i18n.__('base64.errorSavingFile'));
   }
 };
 
-export async function convertFileToBase64(fileUri: any) {
+export async function convertFileToBase64(fileUri: any, context: vscode.ExtensionContext) {
   try {
     let base64Content = '';
     if (fileUri?.includes('base64,')) {
       vscode.window.showInformationMessage(fileUri);
-      vscode.env.clipboard.writeText(fileUri);
-      vscode.window.showInformationMessage(i18n.__('base64.base64ContentCopied'));
+      copyToClipboard(fileUri, 'base64.base64ContentCopied');
       base64Content = fileUri;
     } else {
       const fileContent = fs.readFileSync(fileUri);
       base64Content = fileContent.toString('base64');
       vscode.window.showInformationMessage(base64Content);
-      vscode.env.clipboard.writeText(base64Content);
-      vscode.window.showInformationMessage(i18n.__('base64.base64ContentCopied'));
+      copyToClipboard(base64Content, 'base64.base64ContentCopied');
     }
+
+    const historyManager = new WorkspaceStateManager<HistoryEntry[]>(context, 'conversionHistory');
+
+    const newEntry: HistoryEntry = {
+      id: uuidv4(),
+      timestamp: new Date().toISOString(),
+      input: fileUri,
+      outputBase64: base64Content,
+      type: 'FileToBase64',
+    };
+    historyManager.add(newEntry);
 
     return base64Content;
   } catch (error) {
