@@ -33,4 +33,4 @@ jobs:
     - name: Publish to Marketplace
       env:
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
-      run: vsce publish
+      run: vsce publish --no-dependencies
