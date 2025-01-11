@@ -24,10 +24,10 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Run tests
-        run: pnpm run test
+        run: npm run test
 
       - name: Upload Coverage Report
         if: always()

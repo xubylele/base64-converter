@@ -19,10 +19,10 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
-      run: pnpm install
+      run: npm install
 
     - name: Install VSCE
-      run: pnpm install -g @vscode/vsce
+      run: npm install -g @vscode/vsce
 
     - name: Publish to Marketplace Pre-Release
       env:
