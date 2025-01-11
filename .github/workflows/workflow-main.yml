@@ -18,14 +18,8 @@ jobs:
       with:
         node-version: '18'
 
-    - name: Install pnpm
-      run: |
-          npm install -g pnpm
-          echo "PNPM_HOME=$(pnpm config get prefix)/bin" >> $GITHUB_ENV
-          echo "PATH=$PNPM_HOME:$PATH" >> $GITHUB_ENV
-
     - name: Install dependencies
-      run: pnpm install
+      run: npm install
 
     - name: Install VSCE
       run: npm add -g @vscode/vsce
@@ -33,4 +27,4 @@ jobs:
     - name: Publish to Marketplace
       env:
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
-      run: vsce publish --no-dependencies
+      run: vsce publish

@@ -17,7 +17,7 @@ All notable changes to the "base64-converter" extension will be documented in th
 ### 🔧 Improvements 2.1.0
 
 - Enhanced UI/UX for history interactions with smooth transitions and responsive design.
-- Migrated project dependency management from Yarn to PNPM for improved performance during development and deployment.
+- Migrated project dependency management from Yarn to NPM for better compatibility and stability.
 - Integrated React and Tailwind CSS:
   - Currently applied to the new WebView for conversion history.
   - Sets the foundation for future UI/UX enhancements across the extension.

@@ -1,20 +1,26 @@
+# Excluir node_modules excepto lo necesario
+node_modules/**
+!node_modules/vscode
+
+# Excluir configuraciones locales
 .vscode/**
 .vscode-test/**
-node_modules/**
-.gitignore
-.yarnrc
-esbuild.js
-vsc-extension-quickstart.md
-**/tsconfig.json
-**/eslint.config.mjs
-**/*.map
-**/*.log
-**/*.ts
-out/**
-src/**
+
+# Excluir archivos de configuración y desarrollo
+*.log
+*.ts
+*.tsx
 *.map
-src/webview/index.html
-src/css/output.css
-src/**/*.js
+*.json
+*.yml
+*.md
+.eslintrc*
+.prettierrc*
+jest.config.js
+tailwind.config.js
+
+# Incluir solo los archivos necesarios
 !out/
 !out/extension.js
+!out/App.js
+!out/css/output.css
