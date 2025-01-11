@@ -12,3 +12,12 @@ vsc-extension-quickstart.md
 **/*.map
 **/*.ts
 **/.vscode-test.*
+# Ignora archivos innecesarios
+node_modules/
+src/
+*.map
+*.log
+
+# Incluye la salida de la extensión
+!out/
+!out/extension.js

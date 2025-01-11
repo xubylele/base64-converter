@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "Node16",
     "target": "ES2022",
+    "jsx": "react",
     "lib": [
       "ES2022",
       "dom"
@@ -17,6 +18,9 @@
       "vscode"
     ],
     "skipLibCheck": true,
-    "outDir": "out",
-  }
+    "outDir": "out"
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

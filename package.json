@@ -1,15 +1,21 @@
 {
   "name": "base64-converter",
-  "displayName": "Base64 converter",
-  "description": "A base64 converter",
-  "version": "2.0.1",
+  "displayName": "Base64 Studio",
+  "description": "A base64 studio for converting base64 to file and file to base64.",
+  "version": "2.1.0",
   "publisher": "Xubylele",
   "icon": "assets/logo.png",
   "engines": {
-    "vscode": "^1.93.0"
+    "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
+  ],
+  "files": [
+    "out/**/*",
+    "src/webview/index.html",
+    "src/css/output.css",
+    "src/**/*.js"
   ],
   "main": "./out/extension.js",
   "activationEvents": [],
@@ -34,23 +40,30 @@
       {
         "command": "extension.openFileConverterView",
         "title": "%openFileConverterViewCommand.title%"
+      },
+      {
+        "command": "extension.showHistory",
+        "title": "%showHistoryCommand.title%"
       }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "yarn run package",
-    "compile": "yarn run check-types && yarn run lint && node esbuild.js",
-    "build": "node esbuild.js --production",
-    "watch": "node esbuild.js --watch",
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && pnpm run build:tailwind && node esbuild.js",
+    "build": "pnpm run build:tailwind && node esbuild.js --production",
+    "watch": "pnpm run build:tailwind && node esbuild.js --watch",
     "watch:esbuild": "node esbuild.js --watch",
-    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "package": "pnpm run check-types && pnpm run lint && pnpm run build:tailwind && node esbuild.js --production",
     "check-types": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build:tailwind": "pnpm tailwindcss -i ./src/css/tailwind.css -o ./out/css/output.css --minify"
   },
   "devDependencies": {
     "@types/i18n": "^0.13.12",
     "@types/mocha": "^10.0.8",
     "@types/node": "22.10.5",
+    "@types/react": "^19.0.4",
+    "@types/react-dom": "^19.0.2",
     "@types/vscode": "1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
@@ -64,6 +77,11 @@
     "vscode": "^1.1.37"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.17",
     "uuid": "^11.0.4"
   }
 }

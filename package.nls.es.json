@@ -2,5 +2,6 @@
   "base64ToFileCommand.title": "Convertir base64 a archivo",
   "openBase64ConverterViewCommand.title": "Abrir convertidor base64",
   "fileToBase64Command.title": "Convertir archivo a base64",
-  "openFileConverterViewCommand.title": "Abrir convertidor de archivos"
+  "openFileConverterViewCommand.title": "Abrir convertidor de archivos",
+  "showHistoryCommand.title": "Mostrar historial de conversiones"
 }

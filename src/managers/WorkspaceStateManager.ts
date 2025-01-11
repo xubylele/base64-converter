@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import { HistoryEntry } from '../types/history';
 
 const MAX_ENTRIES = 40;
 
@@ -22,10 +21,19 @@ export class WorkspaceStateManager<T extends any[]> {
   }
 
   /**
+   * Get a specific entry from the history.
+   * @param id The ID of the entry to retrieve.
+   * @returns The entry with the specified ID.
+   */
+  public findById(id: string): T[0] | undefined {
+    return this.getAll().find((entry) => entry.id === id);
+  }
+
+  /**
    * Add a value to the history.
    * @param value The value to add.
    */
-  public add(value: HistoryEntry): void {
+  public add(value: T[0]): void {
     const history = this.getAll();
     history.unshift(value);
 

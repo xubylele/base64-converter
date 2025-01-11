@@ -5,6 +5,7 @@ import i18n from '../I18n';
 import { WorkspaceStateManager } from '../managers/WorkspaceStateManager';
 import { HistoryEntry } from '../types/history';
 import { getConversionPath, saveConversionPath } from './conversionPath';
+import { copyToClipboard } from './utils';
 
 export async function convertBase64ToFile(context: vscode.ExtensionContext, base64Input: string) {
   const extensionOptions = ['pdf', 'txt', 'png', 'jpg', 'docx', i18n.__('base64.other')];
@@ -39,7 +40,7 @@ export async function convertBase64ToFile(context: vscode.ExtensionContext, base
   }
 
   try {
-    const historyManager = new WorkspaceStateManager<string[]>(context, 'conversionHistory');
+    const historyManager = new WorkspaceStateManager<HistoryEntry[]>(context, 'conversionHistory');
 
     const fileContent = Buffer.from(base64Input, 'base64');
     fs.writeFile(saveUri.fsPath, fileContent, (err) => {
@@ -71,18 +72,16 @@ export async function convertFileToBase64(fileUri: any, context: vscode.Extensio
     let base64Content = '';
     if (fileUri?.includes('base64,')) {
       vscode.window.showInformationMessage(fileUri);
-      vscode.env.clipboard.writeText(fileUri);
-      vscode.window.showInformationMessage(i18n.__('base64.base64ContentCopied'));
+      copyToClipboard(fileUri, 'base64.base64ContentCopied');
       base64Content = fileUri;
     } else {
       const fileContent = fs.readFileSync(fileUri);
       base64Content = fileContent.toString('base64');
       vscode.window.showInformationMessage(base64Content);
-      vscode.env.clipboard.writeText(base64Content);
-      vscode.window.showInformationMessage(i18n.__('base64.base64ContentCopied'));
+      copyToClipboard(base64Content, 'base64.base64ContentCopied');
     }
 
-    const historyManager = new WorkspaceStateManager<string[]>(context, 'conversionHistory');
+    const historyManager = new WorkspaceStateManager<HistoryEntry[]>(context, 'conversionHistory');
 
     const newEntry: HistoryEntry = {
       id: uuidv4(),
