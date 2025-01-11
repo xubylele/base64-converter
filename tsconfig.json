@@ -15,12 +15,15 @@
     ],
     "types": [
       "node",
-      "vscode"
+      "vscode",
+      "jest",
+      "@testing-library/jest-dom"
     ],
     "skipLibCheck": true,
     "outDir": "out"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "test/**/*"
   ]
 }
