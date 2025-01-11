@@ -1,8 +1,6 @@
 .vscode/**
 .vscode-test/**
-out/**
 node_modules/**
-src/**
 .gitignore
 .yarnrc
 esbuild.js
@@ -10,14 +8,13 @@ vsc-extension-quickstart.md
 **/tsconfig.json
 **/eslint.config.mjs
 **/*.map
+**/*.log
 **/*.ts
-**/.vscode-test.*
-# Ignora archivos innecesarios
-node_modules/
-src/
+out/**
+src/**
 *.map
-*.log
-
-# Incluye la salida de la extensión
+src/webview/index.html
+src/css/output.css
+src/**/*.js
 !out/
 !out/extension.js
