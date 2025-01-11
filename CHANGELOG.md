@@ -2,7 +2,7 @@
 
 All notable changes to the "base64-converter" extension will be documented in this file.
 
-## [2.1.0] - 2025-01-
+## [2.1.0] - 2025-01-11
 
 ### 🌟 New Features 2.1.0
 
@@ -17,6 +17,15 @@ All notable changes to the "base64-converter" extension will be documented in th
 ### 🔧 Improvements 2.1.0
 
 - Enhanced UI/UX for history interactions with smooth transitions and responsive design.
+- Migrated project dependency management from Yarn to PNPM for improved performance during development and deployment.
+- Integrated React and Tailwind CSS:
+  - Currently applied to the new WebView for conversion history.
+  - Sets the foundation for future UI/UX enhancements across the extension.
+
+### 🔢 Testing Enhancements 2.1.0
+
+- Added Jest unit tests for the new WebView, ensuring robustness and edge-case handling.
+- Future plans include extending tests to cover existing extension commands to maintain reliability and functionality across features.
 
 ---
 
