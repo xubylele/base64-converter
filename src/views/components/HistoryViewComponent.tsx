@@ -24,11 +24,11 @@ const HistoryViewComponent: React.FC<HistoryViewProps> = ({ t, history }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen flex flex-col items-center p-6">
+    <div className="bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col items-center p-2">
       <h1 className="text-3xl font-bold mb-6">{t('history.panelTitle')}</h1>
 
       {history?.length > 0 ? (
-        <div className="w-full max-w-2xl space-y-4">
+        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-4">
           {history.map((entry) => (
             <div
               key={entry.id}
@@ -63,6 +63,6 @@ const HistoryViewComponent: React.FC<HistoryViewProps> = ({ t, history }) => {
       )}
     </div>
   );
-};
+}
 
 export default HistoryViewComponent;
