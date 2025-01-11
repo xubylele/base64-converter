@@ -2,12 +2,9 @@ name: Run Tests
 
 on:
   push:
-    branches:
-      - main
-      - pre-release
   pull_request:
     branches:
-      - main
+      - master
       - pre-release
 
 jobs:

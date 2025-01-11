@@ -31,11 +31,15 @@ If you find this extension helpful, consider supporting the developer by buying 
 ## Example Base64 Conversion
 
 Here's a quick example of how you can use the Base64 Studio extension to convert a Base64 string into a PNG file:
-![Base64 Studio example](https://i.imgur.com/tEmCxmv.png)
+![Base64 Studio example](https://i.imgur.com/hl2ZMOF.gif)
 
 ## Example File to Base64 Conversion
 
-Here's a quick example of how you can use the Base64 Studio extension to convert a PNG file into a Base64 string: ![Base64 Studio example](https://i.imgur.com/gEGzT9D.png)
+Here's a quick example of how you can use the Base64 Studio extension to convert a PNG file into a Base64 string: ![Base64 Studio example](https://i.imgur.com/UuuDCBk.gif)
+
+## Example History Usage
+
+Here's a quick example of how you can use the Base64 Studio extension to view past conversions and reuse files from the history: ![Base64 Studio example](https://i.imgur.com/MVKd6qp.gif)
 
 ## Installation
 
