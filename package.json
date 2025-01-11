@@ -2,7 +2,7 @@
   "name": "base64-converter",
   "displayName": "Base64 Studio",
   "description": "A base64 studio for converting base64 to file and file to base64.",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "publisher": "Xubylele",
   "icon": "assets/logo.png",
   "engines": {
