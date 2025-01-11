@@ -48,15 +48,15 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "yarn run package",
-    "compile": "yarn run check-types && yarn run lint && yarn run build:tailwind && node esbuild.js",
-    "build": "yarn run build:tailwind && node esbuild.js --production",
-    "watch": "yarn run build:tailwind && node esbuild.js --watch",
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && pnpm run build:tailwind && node esbuild.js",
+    "build": "pnpm run build:tailwind && node esbuild.js --production",
+    "watch": "pnpm run build:tailwind && node esbuild.js --watch",
     "watch:esbuild": "node esbuild.js --watch",
-    "package": "yarn run check-types && yarn run lint && yarn run build:tailwind && node esbuild.js --production",
+    "package": "pnpm run check-types && pnpm run lint && pnpm run build:tailwind && node esbuild.js --production",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
-    "build:tailwind": "npx tailwindcss -i ./src/css/tailwind.css -o ./out/css/output.css --minify"
+    "build:tailwind": "pnpm tailwindcss -i ./src/css/tailwind.css -o ./out/css/output.css --minify"
   },
   "devDependencies": {
     "@types/i18n": "^0.13.12",
