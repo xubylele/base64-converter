@@ -2,7 +2,7 @@
   "name": "base64-converter",
   "displayName": "Base64 Studio",
   "description": "A base64 studio for converting base64 to file and file to base64.",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "publisher": "Xubylele",
   "icon": "assets/logo.png",
   "engines": {
@@ -21,23 +21,23 @@
     "commands": [
       {
         "command": "extension.base64ToFile",
-        "title": "Convert base64 to file"
+        "title": "%base64ToFileCommand.title%"
       },
       {
         "command": "extension.fileToBase64",
-        "title": "Convert file to base64"
+        "title": "%fileToBase64Command.title%"
       },
       {
         "command": "extension.openBase64ConverterView",
-        "title": "Open base64 converter"
+        "title": "%openBase64ConverterViewCommand.title%"
       },
       {
         "command": "extension.openFileConverterView",
-        "title": "Open file converter"
+        "title": "%openFileConverterViewCommand.title%"
       },
       {
         "command": "extension.showHistory",
-        "title": "Show conversion history"
+        "title": "%showHistoryCommand.title%"
       }
     ]
   },
