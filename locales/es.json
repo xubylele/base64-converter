@@ -39,12 +39,12 @@
 		"selectFile": "Seleccionar archivo",
 		"convert": "Convertir"
 	},
-	"historial": {
-		"tituloPanel": "Historial de conversiones",
-		"marcaDeTiempo": "Marca de tiempo",
-		"ruta": "Ruta",
-		"copiar": "Copiar",
-		"reutilizar": "Reutilizar",
+	"history": {
+		"panelTitle": "Historial de conversiones",
+		"timestamp": "Timestamp",
+		"path": "Ruta",
+		"copy": "Copiar",
+		"reuse": "Reutilizar",
 		"noHistoryFound": "No se encontró historial"
 	}
 }

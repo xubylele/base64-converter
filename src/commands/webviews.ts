@@ -1,6 +1,6 @@
-import * as vscode from 'vscode';
 import * as path from 'path';
-import * as fs from 'fs';
+import * as vscode from 'vscode';
+import i18n from '../I18n';
 import { WorkspaceStateManager } from '../managers/WorkspaceStateManager';
 import { HistoryEntry } from '../types/history';
 
@@ -20,7 +20,6 @@ export function createWebview(context: vscode.ExtensionContext): vscode.WebviewP
   );
 
   panel.webview.html = getWebviewContent(context, panel.webview, workSpaceManager);
-
   panel.webview.onDidReceiveMessage((message) => {
     switch (message.command) {
       case 'copy':
@@ -45,9 +44,13 @@ function getWebviewContent(
   webview: vscode.Webview,
   workSpaceManager: WorkspaceStateManager<any[]>
 ): string {
+  const translations = i18n.getCatalog();
+  console.log(translations);
+
   const params = {
     history: workSpaceManager.getAll(),
     component: 'history',
+    translations,
   };
 
   const cssUri = webview.asWebviewUri(

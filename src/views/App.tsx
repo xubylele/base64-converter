@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { HistoryEntry } from '../types/history';
 import HistoryViewComponent from './components/HistoryViewComponent';
 
-declare const params: { history: HistoryEntry[], component: 'history' };
+declare const params: {
+  history: HistoryEntry[],
+  component: 'history',
+  translations: Record<string, string>
+};
 declare global {
   interface Window {
     vscode: any;
@@ -11,6 +15,20 @@ declare global {
 }
 
 const App: React.FC = () => {
+  const t = (key: string): string => {
+    const keys = key.split('.');
+    let result: any = params.translations;
+
+    for (const k of keys) {
+      if (result[k] !== undefined) {
+        result = result[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof result === 'string' ? result : key;
+  };
   const [isDarkMode, setIsDarkMode] = useState(
     window.matchMedia('(prefers-color-scheme: dark)').matches
   );
@@ -40,7 +58,7 @@ const App: React.FC = () => {
       </header>
       <main className="container mx-auto p-6">
         {
-          params.component === 'history' && <HistoryViewComponent />
+          params.component === 'history' && <HistoryViewComponent t={t} history={params.history} />
         }
       </main>
       <footer className="py-4 bg-gray-200 dark:bg-gray-800 text-center">
