@@ -2,9 +2,22 @@
 
 All notable changes to the "base64-converter" extension will be documented in this file.
 
-## [2.1.0] - 2025-01-11
+## [2.4.0] - 2025-01-11
 
-### 🌟 New Features 2.1.0
+### 🌟 New Features 2.4.0
+
+- **Improve readme.md**:
+  - Added gif images to show how to use the extension.
+
+### Bug Fixes 2.4.0
+
+- Fixed an issue to translate extension commands and messages to multiple languages.
+
+---
+
+## [2.2.0] - 2025-01-11
+
+### 🌟 New Features 2.2.0
 
 - **Conversion History UI**:
   - Added a new WebView panel to display the conversion history in a user-friendly interface.
@@ -14,7 +27,7 @@ All notable changes to the "base64-converter" extension will be documented in th
     - Reuse previously converted files.
   - Includes dark mode support that adapts to the user’s system preferences or allows manual toggling.
 
-### 🔧 Improvements 2.1.0
+### 🔧 Improvements 2.2.0
 
 - Enhanced UI/UX for history interactions with smooth transitions and responsive design.
 - Migrated project dependency management from Yarn to NPM for better compatibility and stability.
@@ -22,7 +35,7 @@ All notable changes to the "base64-converter" extension will be documented in th
   - Currently applied to the new WebView for conversion history.
   - Sets the foundation for future UI/UX enhancements across the extension.
 
-### 🔢 Testing Enhancements 2.1.0
+### 🔢 Testing Enhancements 2.2.0
 
 - Added Jest unit tests for the new WebView, ensuring robustness and edge-case handling.
 - Future plans include extending tests to cover existing extension commands to maintain reliability and functionality across features.
