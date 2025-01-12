@@ -18,7 +18,8 @@
 		"selectFileToConvert": "Select the file you want to convert",
 		"base64ContentCopied": "Base64 content copied to clipboard",
 		"fileConvertedToBase64": "File converted to base64",
-		"errorConvertingFile": "Error converting the file, please try again"
+		"errorConvertingFile": "Error converting the file, please try again",
+		"noFileSelected": "No file selected"
 	},
 	"base64Converter": {
 		"title": "Base64 Studio",
