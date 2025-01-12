@@ -2,14 +2,14 @@
 
 All notable changes to the "base64-converter" extension will be documented in this file.
 
-## [2.4.0] - 2025-01-11
+## [2.6.0] - 2025-01-11
 
-### 🌟 New Features 2.4.0
+### 🌟 New Features 2.6.0
 
 - **Improve readme.md**:
   - Added gif images to show how to use the extension.
 
-### Bug Fixes 2.4.0
+### Bug Fixes 2.6.0
 
 - Fixed an issue to translate extension commands and messages to multiple languages.
 
